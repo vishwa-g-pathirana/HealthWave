@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -48,7 +49,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        processRequest(request, response);PrintWriter out=response.getWriter();
     }
 
     /**
@@ -70,11 +71,27 @@ public class Login extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         
+        if("admin".equals(username)){
+            if ("admin123".equals(password)) {
+                out.println("<script type=\"text/javascript\">");
+            out.println("alert('Login successfull.');");
+            out.println("location='profiles/adminprofile/activities.html';");
+            out.println("</script>");
+            }
+        }
+        else{
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Something went wrong.');");
+            out.println("location='createaccount.jsp';");
+            out.println("</script>");
+        }
         if(user.verifyUser(username, password)){
             out.println("<script type=\"text/javascript\">");
-            out.println("alert('Login successfull. Welcome!! ');");
+            out.println("alert('Login successfull.');");
             out.println("location='profiles/patientprofile/activityOne.html';");
             out.println("</script>");
+            HttpSession session=request.getSession();
+       session.setMaxInactiveInterval(600);
         }else{
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Login failed');");
