@@ -27,7 +27,7 @@ public class User {
             if(rs.next() && password.equals(rs.getString("password"))){
                 verified = true;
             }
-            
+          
         }catch(Exception e){
             e.printStackTrace();
         }
