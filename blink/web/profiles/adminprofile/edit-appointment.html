@@ -42,7 +42,7 @@
 						<a class="dropdown-item" href="profile.html">My Profile</a>
 						<a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
 						<a class="dropdown-item" href="settings.html">Settings</a>
-						<a class="dropdown-item" href="login.html">Logout</a>
+						<a class="dropdown-item" href="/blink/home.html">Logout</a>
 					</div>
                 </li>
             </ul>
@@ -113,22 +113,18 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <form>
+                        <form method="get" action="/blink/AppointmentUPDATE">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
 										<label>Appointment ID</label>
-										<input class="form-control" type="text" value="APT-0001" readonly="">
+                                                                                <input class="form-control" type="text" name="id">
 									</div>
                                 </div>
                                 <div class="col-md-6">
 									<div class="form-group">
 										<label>Patient Name</label>
-										<select class="select">
-											<option>Select</option>
-											<option>Jennifer Robinson</option>
-											<option class="selected">Terry Baker</option>
-										</select>
+										<input class="form-control" type="text"  name="pname">
 									</div>
                                 </div>
                             </div>
@@ -136,26 +132,21 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Department</label>
-                                        <select class="select">
+                                        <select class="select" name="Dep">
                                             <option>Select</option>
-                                            <option>Dentists</option>
-                                            <option>Neurology</option>
-                                            <option>Opthalmology</option>
-                                            <option>Orthopedics</option>
-                                            <option>Cancer Department</option>
-                                            <option>ENT Department</option>
+                                            <option name="Dep" value="Dentist">Dentists</option>
+                                            <option name="Dep" value="Neurology">Neurology</option>
+                                            <option name="Dep" value="Opthalmology">Opthalmology</option>
+                                            <option name="Dep" value="Orthopedics">Orthopedics</option>
+                                            <option name="Dep" value="Cancer Department">Cancer Department</option>
+                                            <option name="Dep" value="ENT Department">ENT Department</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Doctor</label>
-                                        <select class="select">
-											<option>Select</option>
-											<option>Cristina Groves</option>
-											<option>Marie Wells</option>
-											<option selected>Henry Daniels</option>
-                                        </select>
+                                        <input class="form-control" type="text"  name="dname">
                                     </div>
                                 </div>
                             </div>
@@ -164,7 +155,7 @@
                                     <div class="form-group">
                                         <label>Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker">
+                                            <input type="text" class="form-control datetimepicker" name="date">
                                         </div>
                                     </div>
                                 </div>
@@ -172,7 +163,7 @@
                                     <div class="form-group">
                                         <label>Time</label>
                                         <div class="time-icon">
-                                            <input type="text" class="form-control" id="datetimepicker3">
+                                            <input type="text" class="form-control" id="datetimepicker3" name="time">
                                         </div>
                                     </div>
                                 </div>
@@ -181,37 +172,37 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Patient Email</label>
-                                        <input class="form-control" type="email">
+                                        <input class="form-control" type="email" name="mail">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Patient Phone Number</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="number">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Message</label>
-                                <textarea cols="30" rows="4" class="form-control"></textarea>
+                                <textarea cols="30" rows="4" class="form-control" name="message"></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="display-block">Appointment Status</label>
 								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="status" id="product_active" value="option1" checked>
+									<input class="form-check-input" type="radio" name="status" id="product_active"  value="active" checked>
 									<label class="form-check-label" for="product_active">
 									Active
 									</label>
 								</div>
 								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="status" id="product_inactive" value="option2">
+									<input class="form-check-input" type="radio" name="status" id="product_inactive" value="inactive">
 									<label class="form-check-label" for="product_inactive">
 									Inactive
 									</label>
 								</div>
                             </div>
                             <div class="m-t-20 text-center">
-                                <button class="btn btn-primary submit-btn">Save</button>
+                                <button class="btn btn-primary submit-btn" action="/blink/AppointmentUPDATE" >Save</button>
                             </div>
                         </form>
                     </div>

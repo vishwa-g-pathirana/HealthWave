@@ -19,7 +19,7 @@ public class SalaryCRUD {
         int x = 0;
         
         try {
-            PreparedStatement ps = con.createConnection().prepareStatement("Insert into Salary (SID,name,salary, basic, DA, HRA,  Conveyance, Allowance , medical, other1,  TDS , ESI  ,PF ,Leave,Tax,welfare,fund,other2) values (? ,?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement ps = con.createConnection().prepareStatement("Insert into Salary values (SID,name,salary, basic, DA, HRA,  Conveyance, Allowance , medical, other1,  TDS , ESI  ,PF ,Leave,Tax,welfare,fund,other2) values (? ,?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             ps.setInt(1,SID);
             ps.setString(2, name);
             ps.setString(3, salary);

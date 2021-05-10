@@ -70,7 +70,14 @@ public class Login extends HttpServlet {
         
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
+        if("chandana".equals(username)){
+            if ("chandana123".equals(password)) {
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Login successfull.');");
+            out.println("location='profiles/doctorprofile/activities.html';");
+            out.println("</script>");
+            }
+        }
         if("admin".equals(username)){
             if ("admin123".equals(password)) {
                 out.println("<script type=\"text/javascript\">");
@@ -79,25 +86,21 @@ public class Login extends HttpServlet {
             out.println("</script>");
             }
         }
-        else{
-            out.println("<script type=\"text/javascript\">");
-            out.println("alert('Something went wrong.');");
-            out.println("location='createaccount.jsp';");
-            out.println("</script>");
-        }
-        if(user.verifyUser(username, password)){
+        else if(user.verifyUser(username, password)){
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Login successfull.');");
             out.println("location='profiles/patientprofile/activityOne.html';");
             out.println("</script>");
             HttpSession session=request.getSession();
-       session.setMaxInactiveInterval(600);
-        }else{
+            session.setMaxInactiveInterval(600);
+        }else {
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Login failed');");
             out.println("location='createaccount.jsp';");
             out.println("</script>");
         }
+        
+       
     }
 
     /**

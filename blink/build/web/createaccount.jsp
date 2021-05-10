@@ -21,17 +21,17 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form action="Login" class="sign-in-form" method ="post">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Username" name="username" required />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" name="password" required/>
             </div>
-            <input type="submit" value="Login" class="btn solid" />
+            <input type="submit" action="Login" value="Login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -48,24 +48,24 @@
               </a>
             </div>
           </form>
-          <form action="#" class="sign-up-form">
+          <form action="Register" class="sign-up-form" method ="post">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Username" name="name" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" name="email"required />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" name="pass" required/>
             </div>
             <input type="submit" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
-              <a href="#" class="social-icon">
+              <a href="https://touch.facebook.com/login/" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
               </a>
               <a href="#" class="social-icon">
